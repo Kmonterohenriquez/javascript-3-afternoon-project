@@ -21,7 +21,7 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+const {color, make, model, year} = carDetails;
 
 
 
@@ -35,6 +35,7 @@ var carDetails = {
 
 function greeting( obj ) {
   //Code Here
+  const {firstName, lastName, title} = obj;
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -54,6 +55,10 @@ function greeting( obj ) {
 */
 
 //Code Here
+function totalPopulation(obj){
+  const { utah, california, texas, arizona} =obj;
+  return utah + california + texas + arizona
+}
 
 
 
@@ -68,6 +73,13 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(obj){
+  const{carb, fat, protein}=obj;
+  var array=[carb, fat, protein];
+  
+  return array
+  
+}
 
 
 
@@ -87,6 +99,19 @@ function greeting( obj ) {
 
 //Code Here
 
+function largeNumbers({first, second, third}){
+  var numb = [first, second, third];
+  var longest;
+  
+  numb.forEach((curr) => {
+    if (curr > longest) {
+      longest= curr;
+    }
+  })
+  
+  return longest;
+}
+
 
 
 ////////// PROBLEM 6 //////////
@@ -97,6 +122,18 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
+//Code Here 
+function numberGroups( {a, b, c} ) {
+  let arrays = [a, b, c]
+  let longest = [];
+  
+  arrays.forEach( (array, index ) => {
+    if (array.length > longest.length) {
+      longest.push(arrays[index]);
+    }
+  })
+  
+  return longest;
+}
 
 

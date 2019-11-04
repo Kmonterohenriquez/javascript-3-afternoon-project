@@ -38,9 +38,12 @@
 /*
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
-
 function showValues( obj ) {
-  //Code Here
+  let arr = []; 
+  for(var key in obj) {
+    arr.push(obj[key])
+  }
+  return arr.join("");
 }
 
 
@@ -54,6 +57,14 @@ function showValues( obj ) {
 */
 
 //Code Here
+function greaterThan10(obj){
+  for(let prop in obj){
+    if(obj[prop]>10){
+      obj[prop] =0;
+    }
+  }
+  return obj
+}
 
 
 
@@ -66,6 +77,12 @@ function showValues( obj ) {
 */
 
 //Code Here
+function double(obj){
+  for(let prop in obj){
+    obj[prop]*= 2;
+  }
+  return obj
+}
 
 
 
@@ -80,6 +97,15 @@ function showValues( obj ) {
 */
 
 //Code Here
+function secrets(obj){
+  var string="";
+  for(let prop in obj){
+    if(prop.slice(0, 2) === 'sh'){
+      string += obj[prop];
+    }
+  }
+  return string
+}
 
 
 
@@ -111,6 +137,10 @@ function showValues( obj ) {
 */
 
 //Code Here
+function removePassword(obj){
+  delete obj.password;
+  return obj
+}
 
 
 
@@ -129,8 +159,11 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
-
+for(let prop in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[prop]>100){
+    delete deleteTheBigNumbers[prop];
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -144,6 +177,14 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
+function startsWithK(obj){
+  for(let prop in obj){
+    if(prop.slice(0, 1) === 'k'){
+      delete obj[prop];
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -157,6 +198,12 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
 
-
+function hiddenTreasure(obj){
+  for(let key in obj){
+    if(!obj[key].includes("treasure")){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
